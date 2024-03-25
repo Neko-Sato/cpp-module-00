@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:50:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/25 01:59:49 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/26 01:10:16 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,29 +17,44 @@
 void Contact::init(void)
 {
 	this->_first_name = "";
-	std::cerr << "First name: ";
-	if (!std::getline(std::cin, this->_first_name))
-		throw std::runtime_error("EOF");
+	while (this->_first_name.empty())
+	{
+		std::cerr << "First name: ";
+		if (!std::getline(std::cin, this->_first_name))
+			throw std::runtime_error("EOF");
+	}
 
 	this->_last_name = "";
-	std::cerr << "Last name: ";
-	if (!std::getline(std::cin, this->_last_name))
-		throw std::runtime_error("EOF");
+	while (this->_last_name.empty())
+	{
+		std::cerr << "Last name: ";
+		if (!std::getline(std::cin, this->_last_name))
+			throw std::runtime_error("EOF");
+	}
 
 	this->_nickname = "";
-	std::cerr << "Nickname: ";
-	if (!std::getline(std::cin, this->_nickname))
-		throw std::runtime_error("EOF");
+	while (this->_nickname.empty())
+	{
+		std::cerr << "Nickname: ";
+		if (!std::getline(std::cin, this->_nickname))
+			throw std::runtime_error("EOF");
+	}
 
 	this->_phone_number = "";
-	std::cerr << "Phone Number: ";
-	if (!std::getline(std::cin, this->_phone_number))
-		throw std::runtime_error("EOF");
+	while (this->_phone_number.empty())
+	{
+		std::cerr << "Phone Number: ";
+		if (!std::getline(std::cin, this->_phone_number))
+			throw std::runtime_error("EOF");
+	}
 
 	this->_darkest_secret = "";
-	std::cerr << "Darkest Secret: ";
-	if (!std::getline(std::cin, this->_darkest_secret))
-		throw std::runtime_error("EOF");
+	while (this->_darkest_secret.empty())
+	{
+		std::cerr << "Darkest Secret: ";
+		if (!std::getline(std::cin, this->_darkest_secret))
+			throw std::runtime_error("EOF");
+	}
 }
 
 void Contact::print(void)

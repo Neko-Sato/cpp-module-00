@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:08:04 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/25 01:38:56 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/26 00:25:22 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ private:
 public:
 	PhoneBook(void);
 	void run(void);
+	void print(void);
 
 	void add(void);
 	void search(void);
