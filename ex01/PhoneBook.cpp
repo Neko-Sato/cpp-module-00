@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:50:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/26 01:28:55 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/26 01:53:40 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ void PhoneBook::add(void)
 	this->_index++;
 }
 
-std::string truncate10(std::string str)
+static std::string truncate10(std::string str)
 {
 	if (10 < str.length())
 	{
