@@ -6,13 +6,12 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:50:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/26 01:10:16 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/26 23:28:06 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <Contact.hpp>
+#include "Contact.hpp"
 #include <iostream>
-#include <limits>
 
 void Contact::init(void)
 {

@@ -6,10 +6,11 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:08:04 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/25 01:58:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/26 16:16:14 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#pragma once
 #ifndef CONTACT_H
 #define CONTACT_H
 
