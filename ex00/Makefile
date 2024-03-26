@@ -6,7 +6,7 @@
 #    By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/24 17:27:29 by hshimizu          #+#    #+#              #
-#    Updated: 2024/01/24 18:49:19 by hshimizu         ###   ########.fr        #
+#    Updated: 2024/03/27 02:59:01 by hshimizu         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,3 +20,7 @@ SRCS		= megaphone.cpp
 
 $(NAME): $(SRCS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
+
+.PHONY: clean
+clean: $(NAME)
+	rm -f $^
