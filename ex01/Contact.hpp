@@ -6,13 +6,13 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:08:04 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/27 02:21:45 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/03/30 07:29:08 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#ifndef __CONTACT_H__
-#define __CONTACT_H__
+#ifndef __CONTACT_HPP__
+#define __CONTACT_HPP__
 
 #include <iostream>
 
