@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/26 07:32:01 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/27 01:41:15 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/18 23:20:34 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,7 +139,6 @@ void Account::displayStatus(void) const
 
 void Account::_displayTimestamp(void)
 {
-	return ;
 	time_t now_time;
 	std::tm *now;
 	char timestamp[18];
