@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:50:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/26 01:53:40 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/18 16:46:04 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 #include <iostream>
 #include <cstdlib>
 
-PhoneBook::PhoneBook(void)
-{
-	this->_index = 0;
-}
+PhoneBook::PhoneBook(void) : _index(0) {}
 
 void PhoneBook::run(void)
 {
@@ -38,8 +35,6 @@ void PhoneBook::run(void)
 				this->search();
 			else if (str == "EXIT")
 				break;
-			else if (str != "")
-				std::cerr << "ADD, SEARCH, EXIT" << std::endl;
 		}
 	}
 	catch (std::exception &e)
