@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:50:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/20 02:52:22 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/20 03:26:36 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void Contact::init(void)
 		if (std::cin.eof())
 			throw std::runtime_error("EOF");
 		std::cerr << "Last name: ";
-		!std::getline(std::cin, _last_name);
+		std::getline(std::cin, _last_name);
 	}
 
 	_nickname = "";
