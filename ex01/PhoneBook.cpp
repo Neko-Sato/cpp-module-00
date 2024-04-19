@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:50:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/04/18 16:46:04 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/20 02:58:50 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,14 @@ void PhoneBook::run(void)
 	{
 		while (true)
 		{
-			std::cerr << "PhoneBook> ";
-			if (!std::getline(std::cin, str))
+			if (std::cin.eof())
 				throw std::runtime_error("EOF");
+			std::cerr << "PhoneBook> ";
+			std::getline(std::cin, str);
 			if (str == "ADD")
-				this->add();
+				add();
 			else if (str == "SEARCH")
-				this->search();
+				search();
 			else if (str == "EXIT")
 				break;
 		}
@@ -46,8 +47,7 @@ void PhoneBook::run(void)
 
 void PhoneBook::add(void)
 {
-	this->_contacts[this->_index % this->_size].init();
-	this->_index++;
+	_contacts[_index++ % _size].init();
 }
 
 static std::string truncate10(std::string str)
@@ -64,7 +64,7 @@ void PhoneBook::print(void)
 {
 	int len;
 
-	len = this->_index > this->_size ? this->_size : this->_index;
+	len = _index > _size ? _size : _index;
 	if (!len)
 	{
 		std::cerr << "No contacts" << std::endl;
@@ -77,7 +77,7 @@ void PhoneBook::print(void)
 	std::cout << std::endl;
 	for (int i = 0; i < len; i++)
 	{
-		Contact &contact = this->_contacts[i];
+		Contact &contact = _contacts[i];
 		std::cout << std::right << std::setw(10) << i << "|";
 		std::cout << std::right << std::setw(10) << truncate10(contact.get_first_name()) << "|";
 		std::cout << std::right << std::setw(10) << truncate10(contact.get_last_name()) << "|";
@@ -93,16 +93,20 @@ void PhoneBook::search(void)
 	int i;
 	int len;
 
-	len = this->_index > this->_size ? this->_size : this->_index;
-	this->print();
+	len = _index > _size ? _size : _index;
+	print();
 	if (!len)
 		return;
-	std::cerr << "index> ";
-	if (!std::getline(std::cin, str))
-		throw std::runtime_error("EOF");
+	while (str.empty())
+	{
+		if (std::cin.eof())
+			throw std::runtime_error("EOF");
+		std::cerr << "index> ";
+		std::getline(std::cin, str);
+	}
 	i = std::strtol(str.c_str(), &end, 10);
 	if (*end || i < 0 || i >= len)
 		std::cerr << "Invalid input" << std::endl;
 	else
-		this->_contacts[i].print();
+		_contacts[i].print();
 }

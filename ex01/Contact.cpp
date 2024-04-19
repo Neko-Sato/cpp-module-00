@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:50:24 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/26 23:28:06 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/20 02:52:22 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,77 +15,82 @@
 
 void Contact::init(void)
 {
-	this->_first_name = "";
-	while (this->_first_name.empty())
+	_first_name = "";
+	while (_first_name.empty())
 	{
+		if (std::cin.eof())
+			throw std::runtime_error("EOF");
 		std::cerr << "First name: ";
-		if (!std::getline(std::cin, this->_first_name))
-			throw std::runtime_error("EOF");
+		std::getline(std::cin, _first_name);
 	}
 
-	this->_last_name = "";
-	while (this->_last_name.empty())
+	_last_name = "";
+	while (_last_name.empty())
 	{
+		if (std::cin.eof())
+			throw std::runtime_error("EOF");
 		std::cerr << "Last name: ";
-		if (!std::getline(std::cin, this->_last_name))
-			throw std::runtime_error("EOF");
+		!std::getline(std::cin, _last_name);
 	}
 
-	this->_nickname = "";
-	while (this->_nickname.empty())
+	_nickname = "";
+	while (_nickname.empty())
 	{
+		if (std::cin.eof())
+			throw std::runtime_error("EOF");
 		std::cerr << "Nickname: ";
-		if (!std::getline(std::cin, this->_nickname))
-			throw std::runtime_error("EOF");
+		std::getline(std::cin, _nickname);
 	}
 
-	this->_phone_number = "";
-	while (this->_phone_number.empty())
+	_phone_number = "";
+	while (_phone_number.empty())
 	{
+		if (std::cin.eof())
+			throw std::runtime_error("EOF");
 		std::cerr << "Phone Number: ";
-		if (!std::getline(std::cin, this->_phone_number))
-			throw std::runtime_error("EOF");
+		std::getline(std::cin, _phone_number);
 	}
 
-	this->_darkest_secret = "";
-	while (this->_darkest_secret.empty())
+	_darkest_secret = "";
+	while (_darkest_secret.empty())
 	{
-		std::cerr << "Darkest Secret: ";
-		if (!std::getline(std::cin, this->_darkest_secret))
+		if (std::cin.eof())
 			throw std::runtime_error("EOF");
+		std::cerr << "Darkest Secret: ";
+		std::getline(std::cin, _darkest_secret);
 	}
 }
 
 void Contact::print(void)
 {
-	std::cout << "First name: " << this->_first_name << std::endl;
-	std::cout << "Last name: " << this->_last_name << std::endl;
-	std::cout << "Nickname: " << this->_nickname << std::endl;
-	std::cout << "Phone Number: " << this->_phone_number << std::endl;
-	std::cout << "Darkest Secret: " << this->_darkest_secret << std::endl;
+	std::cout << "First name: " << _first_name << std::endl;
+	std::cout << "Last name: " << _last_name << std::endl;
+	std::cout << "Nickname: " << _nickname << std::endl;
+	std::cout << "Phone Number: " << _phone_number << std::endl;
+	std::cout << "Darkest Secret: " << _darkest_secret << std::endl;
 }
 
 std::string Contact::get_first_name(void)
 {
-	return (this->_first_name);
+	return _first_name;
 }
 
 std::string Contact::get_last_name(void)
 {
-	return (this->_last_name);
+	return _last_name;
 }
 
 std::string Contact::get_nickname(void)
 {
-	return (this->_nickname);
+	return _nickname;
 }
 
 std::string Contact::get_phone_number(void)
 {
-	return this->get_phone_number();
+	return _phone_number;
 }
 
 std::string Contact::get_darkest_secret(void)
 {
-	return this->get_darkest_secret();
+	return _darkest_secret;
 }
