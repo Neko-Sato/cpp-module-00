@@ -6,7 +6,7 @@
 /*   By: hshimizu <hshimizu@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:08:04 by hshimizu          #+#    #+#             */
-/*   Updated: 2024/03/30 07:29:00 by hshimizu         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:28:46 by hshimizu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,23 +14,23 @@
 #ifndef __PHONEBOOK_HPP__
 #define __PHONEBOOK_HPP__
 
-#include "Contact.hpp"
 #include <iostream>
 
-class PhoneBook
-{
-private:
-	static const int _size = 8;
-	Contact _contacts[_size];
-	int _index;
+#include "Contact.hpp"
 
-public:
-	PhoneBook(void);
-	void run(void);
-	void print(void);
+class PhoneBook {
+ private:
+  static const int _size = 8;
+  Contact _contacts[_size];
+  int _index;
 
-	void add(void);
-	void search(void);
+ public:
+  PhoneBook(void);
+  void run(void);
+  void print(void);
+
+  void add(void);
+  void search(void);
 };
 
 #endif
